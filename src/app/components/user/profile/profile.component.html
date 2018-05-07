@@ -1,0 +1,55 @@
+<nav class="navbar bg-primary navbar-static-top">
+  <div class="container-fluid">
+    <p class="navbar-brand pull-left">
+      <b>Profile</b>
+    </p>
+    <p class="navbar-text pull-right">
+      <a (click) = "updateUser()" class="navbar-link ref-custom">
+        <span class="glyphicon glyphicon-ok"></span>
+      </a>
+    </p>
+
+  </div>
+</nav>
+
+<div class="container-fluid">
+  <h4><b>Username</b></h4>
+  <input [(ngModel)]="username"
+         type="text"
+         class="form-control"
+         id="username"
+         placeholder="Alice">
+  <h4><b>Email</b></h4>
+  <input [(ngModel)]="email"
+         type="email"
+         class="form-control"
+         id="email"
+         placeholder="xxx@xxx.com">
+  <h4><b>First Name</b></h4>
+  <input [(ngModel)]="firstName"
+         type="text"
+         class="form-control"
+         id="firstName"
+         placeholder="Alice">
+  <h4><b>Last Name</b></h4>
+  <input [(ngModel)]="lastName"
+         type="text"
+         class="form-control"
+         id="lastName"
+         placeholder="Wonder">
+  <br>
+  <a [routerLink]="['/user', userId, 'website']" class="btn btn-primary btn-block">Websites</a>
+  <a (click) = "logout()" class="btn btn-danger btn-block">Logout</a>
+
+</div>
+
+<nav class="navbar bg-primary navbar-fixed-bottom">
+  <div class="container-fluid">
+    <p class="navbar-text pull-right">
+      <a [routerLink]="['/user', userId]">
+        <span class="glyphicon glyphicon-user ref-custom"></span>
+      </a>
+    </p>
+
+  </div>
+</nav>

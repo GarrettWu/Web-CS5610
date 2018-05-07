@@ -1,0 +1,89 @@
+<div *ngIf="errorFlag"
+     class="alert alert-danger">
+  {{errorMsg}}
+</div>
+
+
+<div class="row">
+  <div class="col-sm-4 hidden-xs">
+    <nav class="navbar navbar-static-top bg-primary">
+      <div class="container-fluid">
+        <p class="navbar-text pull-left">
+          <a [routerLink]="['/user',userId,'website']" class="navbar-link ref-custom">
+            <span class="glyphicon glyphicon-menu-left"></span>
+          </a>
+        </p>
+
+        <p class="navbar-brand header-custom pull-left">
+          <b>Websites</b>
+        </p>
+
+        <p class="navbar-text pull-right">
+          <a [routerLink]="['/user',userId,'website', 'new']" class="navbar-link ref-custom">
+            <span class="glyphicon glyphicon-plus"></span>
+          </a>
+        </p>
+
+      </div>
+    </nav>
+
+
+    <div class="container-fluid">
+      <ul class="list-group">
+
+        <li *ngFor="let website of websites" class="list-group-item li-custom text-primary">
+          {{website.name}}
+          <a class="pull-right" [routerLink]="['/user', userId, 'website', website._id]">
+            <span class="glyphicon glyphicon-cog"></span>
+          </a>
+        </li>
+
+      </ul>
+    </div>
+  </div>
+
+  <div class="col-sm-8">
+    <nav class="navbar navbar-static-top bg-primary">
+      <div class="container-fluid">
+        <p class="navbar-text pull-left hidden-sm hidden-md hidden-lg">
+          <a [routerLink]="['/user', userId, 'website']" class="navbar-link ref-custom">
+            <span class="glyphicon glyphicon-menu-left"></span>
+          </a>
+        </p>
+
+        <p class="navbar-brand header-custom pull-left">
+          <b>New Websites</b>
+        </p>
+
+        <p class="navbar-text pull-right">
+          <a class="navbar-link ref-custom" (click)="createWebsite()">
+            <span class="glyphicon glyphicon-ok"></span>
+          </a>
+        </p>
+
+      </div>
+    </nav>
+
+    <div class="container-fluid">
+      <h4><b>Name</b></h4>
+      <input type="text" class="form-control" name="websitename" placeholder="Name" [(ngModel)]='name' required>
+
+      <h4><b>Description</b></h4>
+      <textarea type="text" rows="4" class="form-control" name="websitedesc" placeholder="Description" [(ngModel)]='description'></textarea>
+
+    </div>
+
+
+  </div>
+</div>
+
+<nav class="navbar bg-primary navbar-fixed-bottom">
+  <div class="container-fluid">
+    <p class="navbar-text pull-right">
+      <a [routerLink]="['/user', userId]">
+        <span class="glyphicon glyphicon-user ref-custom"></span>
+      </a>
+    </p>
+
+  </div>
+</nav>

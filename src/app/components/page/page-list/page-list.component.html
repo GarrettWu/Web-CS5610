@@ -1,0 +1,46 @@
+<nav class="navbar navbar-default navbar-static-top">
+  <div class="container-fluid">
+    <p class="navbar-text pull-left">
+      <a [routerLink]="['/user', userId, 'website']" class="navbar-link">
+        <span class="glyphicon glyphicon-menu-left"></span>
+      </a>
+    </p>
+
+    <p class="navbar-brand header-custom pull-left">
+      <b>Pages</b>
+    </p>
+
+    <p class="navbar-text pull-right">
+      <a [routerLink]="['/user', userId, 'website', websiteId, 'page', 'new']" class="navbar-link">
+        <span class="glyphicon glyphicon-plus"></span>
+      </a>
+    </p>
+
+  </div>
+</nav>
+
+<div class="container-fluid">
+  <ul class="list-group">
+    <li class="list-group-item li-custom text-primary" *ngFor="let page of pages">
+      <a [routerLink]="['/user', userId, 'website', websiteId, 'page', page._id, 'widget']">
+        {{page.name}}
+      </a>
+      <a class="pull-right" [routerLink]="['/user', userId, 'website', websiteId, 'page', page._id]">
+        <span class="glyphicon glyphicon-cog"></span>
+      </a>
+    </li>
+
+  </ul>
+</div>
+
+<nav class="navbar navbar-default navbar-fixed-bottom">
+  <div class="container-fluid">
+    <p class="navbar-text pull-right">
+      <a [routerLink]="['/user', userId]">
+        <span class="glyphicon glyphicon-user"></span>
+      </a>
+    </p>
+
+  </div>
+</nav>
+

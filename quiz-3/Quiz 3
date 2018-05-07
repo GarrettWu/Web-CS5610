@@ -1,0 +1,73 @@
+Quiz 3
+Select 10 out of 12
+
+Express
+
+1. Give a sample code to set up route that accepts get requests using express
+app.get('/hello', function(req){
+});
+
+2. What does app.listen() do in express and what are the parameters it accepts
+app.listen(port, [hostname], [backlog], [callback])
+Binds and listens for connections on the specified host and port. 
+
+3. How do we start the express server?
+nodemon index.js
+
+4. Write a code snippet to redirect from /hello to /hi in express with a status code of 200
+app.get('/hello', function(req, res){
+  res.redirect(200, '/hi')
+});
+
+
+5. What is response.end() used for in express?
+res.end() will end the response process. This method actually comes from Node core, specifically the response.end() method of http.ServerResponse. It is used to quickly end the response without any data. 
+
+6. How do you set the type of response in express
+res.json(), res.send(), res.sendStatus()
+
+Node.js
+
+HTTP module, URL module
+1. Create a HTTP Server and listen on port 4000
+var http = require('http');
+http.createServer(function (req, res) {
+}).listen(4000);
+
+2. Create a HTTP Server and when any request comes in, respond with text ‘Hello World’ and status code 200
+var http = require('http');
+http.createServer(function (req, res) {
+  res.send('Hello World');
+  res.status(200)
+}).listen(4000);
+
+3. Create a HTTP Server and when any request comes in, display request URL’s hostname and pathname
+var http = require('http');
+var url = require("url");
+
+http.createServer(function (req, res) {
+  var hostname = url.parse(req.url).hostname;
+  var pathname = url.parse(req.url).pathname;  
+  console.log(hostname);
+  console.log(pathname);
+}).listen(4000);
+
+
+File System module, Process module
+
+1. Count the number of files in current directory
+const fs = require('fs');
+fs.readdir('', (err, files) => {
+  console.log(files.length);
+});
+
+2. Read text file ‘data.txt’ in the current directory and display its contents
+const fs = require('fs');
+fs.readFile('data.txt', function(err, data) {
+  res.write(data);
+  return res.end();
+});
+
+3. Display the path of the current working directory
+console.log(process.cwd())
+

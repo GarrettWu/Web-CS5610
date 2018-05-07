@@ -1,0 +1,91 @@
+<div *ngIf="errorFlag"
+     class="alert alert-danger">
+  {{errorMsg}}
+</div>
+
+<div class="row row-close">
+  <div class="col col-sm-4 hidden-xs">
+
+    <nav class="navbar navbar-static-top bg-primary">
+      <div class="container-fluid">
+        <p class="navbar-text pull-left">
+          <a [routerLink]="['/user', userId,'website']" class="navbar-link ref-custom">
+            <span class="glyphicon glyphicon-menu-left"></span>
+          </a>
+        </p>
+
+        <p class="navbar-brand header-custom pull-left">
+          <b>Websites</b>
+        </p>
+
+        <p class="navbar-text pull-right">
+          <a [routerLink]="['/user',userId,'website','new']" class="navbar-link ref-custom">
+            <span class="glyphicon glyphicon-plus"></span>
+          </a>
+        </p>
+
+      </div>
+    </nav>
+
+
+    <div class="container-fluid">
+      <ul class="list-group">
+        <li class="list-group-item li-custom text-primary" *ngFor="let website of websites">
+          <a [routerLink]="['/user', userId, 'website', website._id, 'page']">
+            {{website.name}}
+          </a>
+          <a class="pull-right" [routerLink]="['/user', userId, 'website', website._id]">
+            <span class="glyphicon glyphicon-cog"></span>
+          </a>
+        </li>
+
+      </ul>
+    </div>
+  </div>
+
+  <div class="col col-sm-8">
+    <nav class="navbar navbar-static-top bg-primary">
+      <div class="container-fluid">
+        <p class="navbar-text pull-left hidden-sm hidden-md hidden-lg">
+          <a [routerLink]="['/user/', userId,'website']" class="navbar-link ref-custom">
+            <span class="glyphicon glyphicon-menu-left"></span>
+          </a>
+        </p>
+
+        <p class="navbar-brand header-custom pull-left">
+          <b>Edit Websites</b>
+        </p>
+
+        <p class="navbar-text pull-right">
+          <a class="navbar-link ref-custom" (click)="updateWebsite()">
+            <span class="glyphicon glyphicon-ok"></span>
+          </a>
+        </p>
+
+      </div>
+    </nav>
+
+    <div class="container-fluid">
+      <h4><b>Website Name</b></h4>
+      <input type="text" class="form-control" name="websitename" [(ngModel)]="website.name">
+
+      <h4><b>Website Description</b></h4>
+      <textarea type="text" rows="4" class="form-control" name="websitedesc" [(ngModel)]="website.description"></textarea>
+
+      <a class="btn btn-danger btn-block" (click)="deleteWebsite()">Delete</a>
+    </div>
+
+
+  </div>
+</div>
+
+<nav class="navbar bg-primary navbar-fixed-bottom">
+  <div class="container-fluid">
+    <p class="navbar-text pull-right">
+      <a [routerLink]="['/user/', userId]">
+        <span class="glyphicon glyphicon-user ref-custom"></span>
+      </a>
+    </p>
+
+  </div>
+</nav>

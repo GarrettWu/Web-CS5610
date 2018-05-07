@@ -1,0 +1,42 @@
+.pad-top {
+  padding-top: 70px;
+}
+
+.header-custom {
+  position: absolute;
+  left: 60px;
+}
+
+.panel-heading {
+  width:100%;
+}
+
+.ref-custom {
+  color: white;
+}
+
+.li-custom {
+  border: none;
+}
+
+.jga-widget .jga-toolbar {
+  position: absolute;
+  right: 0px;
+  background-color: grey;
+  padding: 7px;
+  border-bottom-left-radius: 10px;
+  opacity: 0.5;
+}
+
+.jga-widget .jga-content {
+  width: 100%;
+}
+
+.no-padding {
+  padding:0;
+  z-index: -1;
+}
+
+
+
+

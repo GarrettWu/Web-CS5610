@@ -1,0 +1,87 @@
+<div *ngIf="errorFlag"
+     class="alert alert-danger">
+  {{errorMsg}}
+</div>
+
+<nav class="navbar navbar-default navbar-static-top">
+  <div class="container-fluid">
+    <p class="navbar-text pull-left">
+      <a [routerLink]="['/user',userId,'website',websiteId,'page',pageId,'widget']" class="navbar-link">
+        <span class="glyphicon glyphicon-menu-left"></span>
+      </a>
+    </p>
+
+    <p class="navbar-brand header-custom pull-left">
+      <b>Choose Widget</b>
+    </p>
+
+  </div>
+</nav>
+
+<div class="container-fluid">
+  <ul class="list-group">
+    <li class="list-group-item li-custom text-primary">
+      <a (click)="createWidget('HEADING')">
+        Header
+      </a>
+    </li>
+    <li class="list-group-item li-custom text-primary">
+      <a (click)="createWidget('IMAGE')">
+        Image
+      </a>
+    </li>
+    <li class="list-group-item li-custom text-primary">
+      <a (click)="createWidget('YOUTUBE')">
+        Youtube
+      </a>
+    </li>
+    <li class="list-group-item li-custom text-primary">
+      <a (click)="createWidget('LABEL')">
+        Label
+      </a>
+    </li>
+    <li class="list-group-item li-custom text-primary">
+      <a (click)="createWidget('HTML')">
+        HTML
+      </a>
+    </li>
+    <li class="list-group-item li-custom text-primary">
+      <a (click)="createWidget('TEXTINPUT')">
+        Text Input
+      </a>
+    </li>
+    <li class="list-group-item li-custom text-primary">
+      <a (click)="createWidget('LINK')">
+        Link
+      </a>
+    </li>
+    <li class="list-group-item li-custom text-primary">
+      <a (click)="createWidget('BUTTON')">
+        Button
+      </a>
+    </li>
+    <li class="list-group-item li-custom text-primary">
+      <a (click)="createWidget('DATATABLE')">
+        Data Table
+      </a>
+    </li>
+    <li class="list-group-item li-custom text-primary">
+      <a (click)="createWidget('REPEATER')">
+        Repeater
+      </a>
+    </li>
+
+
+  </ul>
+</div>
+
+<nav class="navbar navbar-default navbar-fixed-bottom">
+  <div class="container-fluid">
+    <p class="navbar-text pull-right">
+      <a [routerLink]="['/user',userId]">
+        <span class="glyphicon glyphicon-user"></span>
+      </a>
+    </p>
+
+  </div>
+</nav>
